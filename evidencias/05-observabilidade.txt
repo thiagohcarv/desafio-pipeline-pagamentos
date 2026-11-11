@@ -1,0 +1,24 @@
+# Metrics API — cluster lkc-k8on1m2 — janela 2026-11-11T00:22:38Z / 2026-11-11T03:22:38Z (granularidade 1 min)
+
+## Pico de received_bytes (bytes/min)
+{
+  "pico_bytes_por_minuto": 474287.0,
+  "quando": "2026-11-11T02:59:00Z"
+}
+
+## Total recebido na janela (bytes)
+624761
+
+## Consumer lag por grupo (último ponto e máximo)
+[
+  {
+    "grupo": "desafio-alertas",
+    "lag_ultimo": 1.0,
+    "lag_max": 1.0
+  },
+  {
+    "grupo": "desafio-replay",
+    "lag_ultimo": 1.0,
+    "lag_max": 1.0
+  }
+]

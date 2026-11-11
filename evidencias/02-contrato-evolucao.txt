@@ -1,0 +1,42 @@
+# Subject: desafio.fraud.detected-value | compatibilidade: BACKWARD
+
+## Versão registrada
+{
+  "subject": "desafio.fraud.detected-value",
+  "version": 1,
+  "id": 100001
+}
+
+## POST /compatibility/subjects/desafio.fraud.detected-value/versions/latest  <- fraud_alert_v2_campo_novo_com_default.avsc
+{
+  "is_compatible": true,
+  "messages": []
+}
+
+## POST /compatibility/subjects/desafio.fraud.detected-value/versions/latest  <- fraud_alert_v3_campo_novo_sem_default.avsc
+{
+  "is_compatible": false,
+  "messages": [
+    "{errorType:\"READER_FIELD_MISSING_DEFAULT_VALUE\", description:\"The field 'analyst_id' at path '/fields/11' in the new schema has no default value and is missing in the old schema\", additionalInfo:\"analyst_id\"}",
+    "{oldSchemaVersion: 1}",
+    "{oldSchema: '{\"type\":\"record\",\"name\":\"FraudAlert\",\"namespace\":\"com.bootcamp.payments.fraud\",\"doc\":\"Alerta emitido pelo Flink quando um cartão viola uma regra de fraude. Tópico: desafio.fraud.detected\",\"fields\":[{\"name\":\"alert_id\",\"type\":\"string\",\"doc\":\"Chave natural do alerta: <regra>-<card_id>-<primeira transação>. Base da idempotência do consumidor.\"},{\"name\":\"rule_name\",\"type\":\"string\",\"doc\":\"Regra que disparou, ex.: RULE_VELOCITY\"},{\"name\":\"card_id\",\"type\":\"int\"},{\"name\":\"card_last4\",\"type\":\"string\",\"doc\":\"Últimos 4 dígitos do PAN\",\"confluent:tags\":[\"PCI\"]},{\"name\":\"tx_count\",\"type\":\"long\",\"doc\":\"Quantidade de transações no padrão\"},{\"name\":\"total_amount\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":15,\"scale\":2},\"doc\":\"Soma dos valores (BRL)\"},{\"name\":\"first_transaction_id\",\"type\":\"long\"},{\"name\":\"last_transaction_id\",\"type\":\"long\"},{\"name\":\"window_start\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Event time da 1ª transação do padrão\"},{\"name\":\"window_end\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Event time da última transação do padrão\"},{\"name\":\"detected_at\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Instante em que o Flink emitiu o alerta\"}]}'}",
+    "{validateFields: 'true', compatibility: 'BACKWARD'}"
+  ]
+}
+
+## POST /compatibility/subjects/desafio.fraud.detected-value/versions/latest  <- fraud_alert_v4_remove_campo_obrigatorio.avsc
+{
+  "is_compatible": true,
+  "messages": []
+}
+
+## Contraprova — subject desafio.contrato-forward-demo-value com FORWARD <- fraud_alert_v4_remove_campo_obrigatorio.avsc
+{
+  "is_compatible": false,
+  "messages": [
+    "{errorType:\"READER_FIELD_MISSING_DEFAULT_VALUE\", description:\"The field 'card_last4' at path '/fields/3' in the old schema has no default value and is missing in the new schema\", additionalInfo:\"card_last4\"}",
+    "{oldSchemaVersion: 1}",
+    "{oldSchema: '{\"type\":\"record\",\"name\":\"FraudAlert\",\"namespace\":\"com.bootcamp.payments.fraud\",\"doc\":\"Alerta emitido pelo Flink quando um cartão viola uma regra de fraude. Tópico: desafio.fraud.detected\",\"fields\":[{\"name\":\"alert_id\",\"type\":\"string\",\"doc\":\"Chave natural do alerta: <regra>-<card_id>-<primeira transação>. Base da idempotência do consumidor.\"},{\"name\":\"rule_name\",\"type\":\"string\",\"doc\":\"Regra que disparou, ex.: RULE_VELOCITY\"},{\"name\":\"card_id\",\"type\":\"int\"},{\"name\":\"card_last4\",\"type\":\"string\",\"doc\":\"Últimos 4 dígitos do PAN\",\"confluent:tags\":[\"PCI\"]},{\"name\":\"tx_count\",\"type\":\"long\",\"doc\":\"Quantidade de transações no padrão\"},{\"name\":\"total_amount\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":15,\"scale\":2},\"doc\":\"Soma dos valores (BRL)\"},{\"name\":\"first_transaction_id\",\"type\":\"long\"},{\"name\":\"last_transaction_id\",\"type\":\"long\"},{\"name\":\"window_start\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Event time da 1ª transação do padrão\"},{\"name\":\"window_end\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Event time da última transação do padrão\"},{\"name\":\"detected_at\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"},\"doc\":\"Instante em que o Flink emitiu o alerta\"}]}'}",
+    "{validateFields: 'true', compatibility: 'FORWARD'}"
+  ]
+}

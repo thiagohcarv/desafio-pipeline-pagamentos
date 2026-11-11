@@ -1,0 +1,17 @@
+$ confluent connect cluster list
+None found.
+
+$ confluent flink statement list
+No Flink endpoint is specified, defaulting to public endpoint: https://flink.us-east-1.aws.confluent.cloud
+None found.
+
+$ psql -c 'SELECT slot_name FROM pg_replication_slots'
+     slot_name      | active 
+--------------------+--------
+ wal_proposer_slot  | t
+ wal_retention_slot | f
+(2 rows)
+
+
+$ confluent environment list | grep desafio-final
+(nenhum environment desafio-final)

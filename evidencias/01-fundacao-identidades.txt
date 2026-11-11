@@ -1,0 +1,25 @@
+$ confluent iam service-account list
+  Current |     ID     |       Name       |          Description            
+----------+------------+------------------+---------------------------------
+          | sa-196n725 | desafio-ops      | Somente leitura de metricas     
+          | sa-dgp1doo | desafio-flink    | Principal dos statements Flink  
+          | sa-j879dom | desafio-producer | Escreve em desafio*: usado      
+          | sa-ygw6pq7 | desafio-consumer | Le de desafio* e usa grupos     
+
+$ confluent kafka acl list --service-account sa-j879dom
+     Principal    | Permission | Operation | Resource Type |    Resource Name     | Pattern Type  
+------------------+------------+-----------+---------------+----------------------+---------------
+  User:sa-j879dom | ALLOW      | CREATE    | TOPIC         | __debezium-heartbeat | PREFIXED      
+  User:sa-j879dom | ALLOW      | CREATE    | TOPIC         | desafio              | PREFIXED      
+  User:sa-j879dom | ALLOW      | DESCRIBE  | CLUSTER       | kafka-cluster        | LITERAL       
+  User:sa-j879dom | ALLOW      | DESCRIBE  | TOPIC         | __debezium-heartbeat | PREFIXED      
+  User:sa-j879dom | ALLOW      | DESCRIBE  | TOPIC         | desafio              | PREFIXED      
+  User:sa-j879dom | ALLOW      | WRITE     | TOPIC         | __debezium-heartbeat | PREFIXED      
+  User:sa-j879dom | ALLOW      | WRITE     | TOPIC         | desafio              | PREFIXED      
+
+$ confluent kafka acl list --service-account sa-ygw6pq7
+     Principal    | Permission | Operation | Resource Type | Resource Name | Pattern Type  
+------------------+------------+-----------+---------------+---------------+---------------
+  User:sa-ygw6pq7 | ALLOW      | DESCRIBE  | TOPIC         | desafio       | PREFIXED      
+  User:sa-ygw6pq7 | ALLOW      | READ      | GROUP         | desafio       | PREFIXED      
+  User:sa-ygw6pq7 | ALLOW      | READ      | TOPIC         | desafio       | PREFIXED      

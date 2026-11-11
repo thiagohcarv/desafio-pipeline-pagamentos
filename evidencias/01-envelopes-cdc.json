@@ -1,0 +1,270 @@
+[
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 7,
+          "amount": "42",
+          "card_id": 7,
+          "card_last4": "7157",
+          "created_at": "2026-11-11T03:00:40.099Z",
+          "currency": "BRL",
+          "merchant_id": 1,
+          "status": "PENDENTE",
+          "transaction_id": 2001
+        }
+      },
+      "before": null,
+      "op": "c",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30284760,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[null,\"30284760\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366040111,
+        "txId": 4113,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366040299
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 7,
+          "amount": "87/2",
+          "card_id": 7,
+          "card_last4": "7157",
+          "created_at": "2026-11-11T03:00:40.099Z",
+          "currency": "BRL",
+          "merchant_id": 1,
+          "status": "APROVADA",
+          "transaction_id": 2001
+        }
+      },
+      "before": {
+        "desafio.public.transactions.Value": {
+          "account_id": 7,
+          "amount": "42",
+          "card_id": 7,
+          "card_last4": "7157",
+          "created_at": "2026-11-11T03:00:40.099Z",
+          "currency": "BRL",
+          "merchant_id": 1,
+          "status": "PENDENTE",
+          "transaction_id": 2001
+        }
+      },
+      "op": "u",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30285256,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30285256\",\"30285256\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366042399,
+        "txId": 4114,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366042828
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": null,
+      "before": {
+        "desafio.public.transactions.Value": {
+          "account_id": 7,
+          "amount": "87/2",
+          "card_id": 7,
+          "card_last4": "7157",
+          "created_at": "2026-11-11T03:00:40.099Z",
+          "currency": "BRL",
+          "merchant_id": 1,
+          "status": "APROVADA",
+          "transaction_id": 2001
+        }
+      },
+      "op": "d",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30285504,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30285504\",\"30285504\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366044685,
+        "txId": 4115,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366044855
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {}
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 42,
+          "amount": "1299/10",
+          "card_id": 42,
+          "card_last4": "3367",
+          "created_at": "2026-11-11T03:10:30.936Z",
+          "currency": "BRL",
+          "merchant_id": 11,
+          "status": "APROVADA",
+          "transaction_id": 2002
+        }
+      },
+      "before": null,
+      "op": "c",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30315320,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30286168\",\"30315320\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366630953,
+        "txId": 4130,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366631385
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 42,
+          "amount": "349",
+          "card_id": 42,
+          "card_last4": "3367",
+          "created_at": "2026-11-11T03:10:36.256Z",
+          "currency": "BRL",
+          "merchant_id": 23,
+          "status": "APROVADA",
+          "transaction_id": 2003
+        }
+      },
+      "before": null,
+      "op": "c",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30315976,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30315872\",\"30315976\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366636256,
+        "txId": 4131,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366636444
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 42,
+          "amount": "189999/100",
+          "card_id": 42,
+          "card_last4": "3367",
+          "created_at": "2026-11-11T03:10:41.581Z",
+          "currency": "BRL",
+          "merchant_id": 37,
+          "status": "APROVADA",
+          "transaction_id": 2004
+        }
+      },
+      "before": null,
+      "op": "c",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30316576,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30316472\",\"30316576\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366641581,
+        "txId": 4132,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366642005
+    }
+  },
+  {
+    "key": "\u0000\u0000\u0001���\u001f",
+    "value": {
+      "after": {
+        "desafio.public.transactions.Value": {
+          "account_id": 43,
+          "amount": "99/10",
+          "card_id": 43,
+          "card_last4": "9078",
+          "created_at": "2026-11-11T03:10:56.927Z",
+          "currency": "BRL",
+          "merchant_id": 5,
+          "status": "APROVADA",
+          "transaction_id": 2005
+        }
+      },
+      "before": null,
+      "op": "c",
+      "source": {
+        "connector": "postgresql",
+        "db": "neondb",
+        "lsn": 30317680,
+        "name": "desafio",
+        "schema": "public",
+        "sequence": "[\"30317072\",\"30317680\"]",
+        "snapshot": "false",
+        "table": "transactions",
+        "ts_ms": 1794366656927,
+        "txId": 4134,
+        "version": "3.2.5.Final",
+        "xmin": null
+      },
+      "transaction": null,
+      "ts_ms": 1794366657360
+    }
+  }
+]

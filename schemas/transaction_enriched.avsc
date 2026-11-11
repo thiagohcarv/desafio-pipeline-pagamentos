@@ -1,0 +1,94 @@
+{
+  "type": "record",
+  "name": "EnrichedTransaction",
+  "namespace": "com.bootcamp.payments.transactions",
+  "doc": "Transação enriquecida com a versão da conta vigente no instante da transação (temporal join). Tópico: desafio.transactions.enriched",
+  "fields": [
+    {
+      "name": "transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "card_id",
+      "type": "int"
+    },
+    {
+      "name": "account_id",
+      "type": "int"
+    },
+    {
+      "name": "merchant_id",
+      "type": "int"
+    },
+    {
+      "name": "card_last4",
+      "type": "string",
+      "confluent:tags": [
+        "PCI"
+      ]
+    },
+    {
+      "name": "amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 15,
+        "scale": 2
+      }
+    },
+    {
+      "name": "currency",
+      "type": "string"
+    },
+    {
+      "name": "tx_status",
+      "type": "string"
+    },
+    {
+      "name": "customer_id",
+      "type": "int"
+    },
+    {
+      "name": "holder_name",
+      "type": "string",
+      "doc": "Titular da conta",
+      "confluent:tags": [
+        "PII"
+      ]
+    },
+    {
+      "name": "account_type",
+      "type": "string"
+    },
+    {
+      "name": "account_status",
+      "type": "string"
+    },
+    {
+      "name": "credit_limit",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 15,
+        "scale": 2
+      },
+      "doc": "Limite vigente na versão da conta usada no join"
+    },
+    {
+      "name": "account_version_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "updated_at da versão da conta usada no join"
+    },
+    {
+      "name": "created_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Event time da transação"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "type": "record",
+  "name": "FraudAlert",
+  "namespace": "com.bootcamp.payments.fraud",
+  "doc": "Alerta emitido pelo Flink quando um cartão viola uma regra de fraude. Tópico: desafio.fraud.detected",
+  "fields": [
+    {
+      "name": "alert_id",
+      "type": "string",
+      "doc": "Chave natural do alerta: <regra>-<card_id>-<primeira transação>. Base da idempotência do consumidor."
+    },
+    {
+      "name": "rule_name",
+      "type": "string",
+      "doc": "Regra que disparou, ex.: RULE_VELOCITY"
+    },
+    {
+      "name": "card_id",
+      "type": "int"
+    },
+    {
+      "name": "card_last4",
+      "type": "string",
+      "doc": "Últimos 4 dígitos do PAN",
+      "confluent:tags": [
+        "PCI"
+      ]
+    },
+    {
+      "name": "tx_count",
+      "type": "long",
+      "doc": "Quantidade de transações no padrão"
+    },
+    {
+      "name": "total_amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 15,
+        "scale": 2
+      },
+      "doc": "Soma dos valores (BRL)"
+    },
+    {
+      "name": "first_transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "last_transaction_id",
+      "type": "long"
+    },
+    {
+      "name": "window_start",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Event time da 1ª transação do padrão"
+    },
+    {
+      "name": "window_end",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Event time da última transação do padrão"
+    },
+    {
+      "name": "detected_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      },
+      "doc": "Instante em que o Flink emitiu o alerta"
+    }
+  ]
+}

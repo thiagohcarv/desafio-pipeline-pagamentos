@@ -1,0 +1,2 @@
+$ confluent billing cost list --start-date 2026-11-04 --end-date 2026-11-12
+None found.

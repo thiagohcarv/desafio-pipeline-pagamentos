@@ -1,0 +1,12 @@
+# segredos e estado local — nunca versionar
+.env
+.state.env
+.state/
+*.secret
+*.pem
+
+# artefatos locais
+consumer/alertas.db
+__pycache__/
+.venv/
+.DS_Store

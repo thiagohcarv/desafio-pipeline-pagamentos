@@ -1,0 +1,6 @@
+$ psql -f db/04-contagem.sql   # seed=42
+ customers | accounts | cards | merchants | transactions 
+-----------+----------+-------+-----------+--------------
+       200 |      240 |   320 |        60 |         2000
+(1 row)
+

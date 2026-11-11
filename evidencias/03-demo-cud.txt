@@ -1,0 +1,5 @@
+ transacao_demo_insert_update_delete 
+-------------------------------------
+                                2001
+(1 row)
+

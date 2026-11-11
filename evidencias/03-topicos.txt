@@ -1,0 +1,10 @@
+                    Name                   | Internal | Replication Factor | Partition Count  
+-------------------------------------------+----------+--------------------+------------------
+  __debezium-heartbeat-lcc-rrw5xd1.desafio | false    |                  3 |               1  
+  desafio.fraud.detected                   | false    |                  3 |               1  
+  desafio.public.accounts                  | false    |                  3 |               1  
+  desafio.public.cards                     | false    |                  3 |               1  
+  desafio.public.customers                 | false    |                  3 |               1  
+  desafio.public.merchants                 | false    |                  3 |               1  
+  desafio.public.transactions              | false    |                  3 |               1  
+  desafio.transactions.enriched            | false    |                  3 |               1  
