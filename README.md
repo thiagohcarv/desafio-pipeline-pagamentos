@@ -451,7 +451,7 @@ ouvindo desafio.fraud.detected como grupo desafio-replay (Ctrl+C para sair)
 
 ## Custo total e teardown
 
-**Custo declarado:** PENDENTE — o billing do Confluent Cloud leva até 72 h para fechar o dia (em 11/11/2026 `confluent billing cost list` ainda retornava *None found*). Todo o uso saiu dos créditos de teste; nenhum valor foi cobrado em cartão. Neon no plano gratuito: US$ 0,00.
+**Custo declarado:** **US$ 1.84** — total do período em `confluent billing cost list`, pago com os créditos de teste do Confluent Cloud (nenhum valor cobrado em cartão). Neon no plano gratuito: US$ 0,00.
 
 `./teardown.sh` executado ao final — verificação de listas vazias:
 

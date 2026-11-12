@@ -1,2 +1,7 @@
-$ confluent billing cost list --start-date 2026-11-04 --end-date 2026-11-12
-None found.
+  Start Date |  End Date  | Granularity |      Line Type      | Product |   Resource   |    Resource Name     | Environment | Network Access Type |        Price        | Original Amount | Discount Amount |  Amount   
+-------------+------------+-------------+---------------------+---------+--------------+----------------------+-------------+---------------------+---------------------+-----------------+-----------------+-----------
+  2026-11-11 | 2026-11-12 | DAILY       | CONNECT_NUM_TASKS   | CONNECT | lcc-rrw5xd1  | desafio-cdc-postgres | env-j2xn8w  | PUBLIC              | $0.50 USD/Task-hour | $1.00           | $0.00           | $1.00     
+  2026-11-11 | 2026-11-12 | DAILY       | FLINK_NUM_CFUS      | FLINK   | lfcp-6k639dj | desafio-pool         | env-j2xn8w  |                     | $0.21 USD/CFU-hour  | $0.3045         | $0.00           | $0.3045   
+  2026-11-11 | 2026-11-12 | DAILY       | KAFKA_NETWORK_WRITE | KAFKA   | lkc-k8on1m2  | desafio-basic        | env-j2xn8w  | INTERNET            | $0.05 USD/GB        | $0.0002         | $0.00           | $0.0002   
+  2026-11-11 | 2026-11-12 | DAILY       | KAFKA_NUM_CKUS      | KAFKA   | lkc-k8on1m2  | desafio-basic        | env-j2xn8w  | INTERNET            | $0.135 USD/CKU-hour | $0.54           | $0.00           | $0.54     
+  2026-11-11 | 2026-11-12 | DAILY       | PROMO_CREDIT        |         |              |                      |             |                     |                     | $-1.8448        |                 | $-1.8448  
